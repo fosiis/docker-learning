@@ -19,7 +19,7 @@
 
 
 #Stage 1: Build Stage
-FROM python:3.8-slim as Build
+FROM python:3.8-slim AS build
 
 WORKDIR /app
 
@@ -40,7 +40,7 @@ FROM python:3.8-slim
 
 WORKDIR /app
 
-COPY --from=Build /app /app
+COPY --from=build /app /app
 
 EXPOSE 5002
 
